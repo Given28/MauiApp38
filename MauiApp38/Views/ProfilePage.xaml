@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp38.ProfilePage"
+             xmlns:local="clr-namespace:MauiApp38"
+             Title="Profile" BackgroundColor="Pink">
+
+    <ContentPage.BindingContext>
+        <local:ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Image Source="{Binding ProfilePicturePath}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+        <Button Text="Upload Picture" Command="{Binding ChooseImageCommand}" BackgroundColor="MediumPurple"/>
+
+        <Entry Text="{Binding Name}" Placeholder="Name" TextColor="Black"/>
+        <Entry Text="{Binding Surname}" Placeholder="Surname" TextColor="Black"/>
+        <Entry Text="{Binding Email}" Placeholder="Email" Keyboard="Email" TextColor="Black"/>
+        <Editor Text="{Binding Bio}" Placeholder="Bio" AutoSize="TextChanges" TextColor="Black"/>
+
+        <Button Text="Save Profile" Command="{Binding SaveCommand}" BackgroundColor="MediumPurple"/>
+    </VerticalStackLayout>
+</ContentPage>
